@@ -5,6 +5,7 @@ import { ResetController } from './reset.controller';
 
 
 @Module({
+  imports: [],
   controllers: [SignupController, ResetController],
   providers: [EmailService]
 })

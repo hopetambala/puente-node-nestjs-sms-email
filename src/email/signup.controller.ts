@@ -1,13 +1,13 @@
 import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
 import { EmailService } from './service/email.service';
-import { CreateEmailDto } from './dto/create-email.dto';
+import { Message } from './dto/message';
 
 @Controller('signup')
 export class SignupController {
   constructor(private readonly emailService: EmailService) {}
 
   @Post()
-  create(@Body() createEmailDto: CreateEmailDto) {
+  create(@Body() createEmailDto: Message) {
     return this.emailService.create(createEmailDto);
   }
 
