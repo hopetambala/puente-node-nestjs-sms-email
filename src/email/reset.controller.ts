@@ -18,7 +18,8 @@ export class ResetController {
       from_email:"tech@puente-dr.org",
       subject,
       text,
-      to}).catch((e: any)=>{
+      to})
+      .catch((e: any)=>{
         return `INVALID${e}`
       });
   }
