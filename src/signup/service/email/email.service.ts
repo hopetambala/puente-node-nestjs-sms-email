@@ -30,6 +30,6 @@ export default class EmailService {
   }
 
   findAll() {
-    return `This action returns all email signup`;
+    return 'This action returns all email signup';
   }
 }
