@@ -1,9 +1,9 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
-import { EmailService } from './service/email.service';
-import { Message, RestPostCall } from './dto/message';
+import { Controller, Get, Post, Body} from '@nestjs/common';
+import { EmailService } from './service/email/email.service';
+import { Message, RestPostCall } from './dto/email-message';
 
-@Controller('reset')
-export class ResetController {
+@Controller('signup')
+export class SignupController {
   constructor(private readonly emailService: EmailService) {}
 
   @Post()
@@ -18,8 +18,7 @@ export class ResetController {
       from_email:"tech@puente-dr.org",
       subject,
       text,
-      to})
-      .catch((e: any)=>{
+      to}).catch((e: any)=>{
         return `INVALID${e}`
       });
   }
