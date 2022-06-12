@@ -26,6 +26,6 @@ export default class TextService {
   }
 
   findAll() {
-    return `This action returns all text signup`;
+    return 'This action returns all text signup';
   }
 }
