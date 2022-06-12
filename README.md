@@ -58,5 +58,7 @@ The architectural design of NestJS encourages feature modules. This feature-base
 
 ### Services
 Services are classes that handle business logic.
+- [Mailchimp](https://mailchimp.com/developer/transactional/)
+- [Twilio](https://www.twilio.com/docs/sms/quickstart/node)
 
 
