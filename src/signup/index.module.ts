@@ -8,4 +8,4 @@ import { SignupController } from './index.controller';
   controllers: [SignupController],
   providers: [EmailService]
 })
-export class EmailModule {}
+export class SignupModule {}
