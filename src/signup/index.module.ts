@@ -1,11 +1,11 @@
 import { Module } from '@nestjs/common';
-import { EmailService } from './service/email/email.service';
-import { SignupController } from './index.controller';
-
+import EmailService from './service/email/email.service';
+import TextService from './service/text/text.service';
+import SignupController from './index.controller';
 
 @Module({
   imports: [],
   controllers: [SignupController],
-  providers: [EmailService]
+  providers: [EmailService, TextService],
 })
-export class EmailModule {}
+export default class SignupModule {}
