@@ -1,10 +1,10 @@
 import { Controller, Get, Post, Body } from '@nestjs/common';
-import { EmailService } from './service/email/email.service';
-import { TextService } from './service/text/text.service';
+import EmailService from './service/email/email.service';
+import TextService from './service/text/text.service';
 import { RestCall } from './dto/rest-call';
 
 @Controller('signup')
-export class SignupController {
+export default class SignupController {
   constructor(
     private readonly emailService: EmailService,
     private readonly textService: TextService,

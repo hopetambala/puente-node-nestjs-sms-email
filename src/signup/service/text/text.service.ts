@@ -3,20 +3,25 @@ import { TWILIO } from 'vendors/twilio';
 import { RestCall } from '../../dto/rest-call';
 
 @Injectable()
-export class TextService {
+export default class TextService {
   twilio: any;
-  constructor(){
-    this.twilio = TWILIO()(process.env.TWILIO_ACCOUNT_SID,process.env.TWILIO_AUTH_TOKEN);
+
+  constructor() {
+    this.twilio = TWILIO()(
+      process.env.TWILIO_ACCOUNT_SID,
+      process.env.TWILIO_AUTH_TOKEN,
+    );
   }
+
   create(data: RestCall) {
-    const {textBody:body, textTo:to } = data
+    const { textBody: body, textTo: to } = data;
 
     const message = {
-      from:"+16505905090",
+      from: '+16505905090',
       to,
-      body
-    }
-  
+      body,
+    };
+
     return this.twilio.messages.create(message);
   }
 

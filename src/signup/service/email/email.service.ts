@@ -3,7 +3,7 @@ import { MAILCHIMP } from 'vendors/mailchimp';
 import { RestCall } from '../../dto/rest-call';
 
 @Injectable()
-export class EmailService {
+export default class EmailService {
   mailchimp: any;
 
   constructor() {
