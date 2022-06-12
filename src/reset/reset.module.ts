@@ -4,6 +4,6 @@ import { ResetController } from './reset.controller';
 
 @Module({
   controllers: [ResetController],
-  providers: [ResetService]
+  providers: [ResetService],
 })
 export class ResetModule {}
