@@ -9,9 +9,3 @@ export interface Message {
   text: string;
   to: Array<Recipients>;
 }
-
-export interface RestPostCall {
-  emailSubject: string;
-  emailBody: string;
-  emailsToSendTo: Array<string>;
-}
