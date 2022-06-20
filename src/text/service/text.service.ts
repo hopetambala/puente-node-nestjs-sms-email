@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { TWILIO } from 'vendors/twilio';
-import { RestCall } from '../../dto/rest-call';
+import { RestCall } from '../dto/rest-call';
 
 @Injectable()
 export default class TextService {
@@ -25,7 +25,7 @@ export default class TextService {
     return this.twilio.messages.create(message);
   }
 
-  findAll() {
-    return 'This action returns all text signup';
+  static findAll() {
+    return 'This action returns all text';
   }
 }

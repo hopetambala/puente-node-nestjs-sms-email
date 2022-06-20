@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { MAILCHIMP } from 'vendors/mailchimp';
-import { RestCall } from '../../dto/rest-call';
+import { RestCall } from '../dto/rest-call';
 
 @Injectable()
 export default class EmailService {
@@ -24,12 +24,8 @@ export default class EmailService {
       to,
     };
 
-    return this.mailchimp.messages.send({
-      message,
-    });
+    return this.mailchimp.messages.send({ message });
   }
 
-  findAll() {
-    return 'This action returns all email signup';
-  }
+  static findAll = () => 'This action returns all email';
 }

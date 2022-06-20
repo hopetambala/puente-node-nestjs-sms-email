@@ -2,15 +2,11 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import AppController from './app.controller';
 import AppService from './app.service';
-import SignupModule from './signup/index.module';
+import EmailModule from './email/index.module';
+import TextModule from './text/index.module';
 
 @Module({
-  imports: [
-    ConfigModule.forRoot({
-      isGlobal: true,
-    }),
-    SignupModule,
-  ],
+  imports: [ConfigModule.forRoot({ isGlobal: true }), EmailModule, TextModule],
   controllers: [AppController],
   providers: [AppService],
 })
