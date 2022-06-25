@@ -5,7 +5,7 @@ export default class AppService {
   hello: string;
 
   getHello(): string {
-    this.hello = 'Hello World!';
+    this.hello = 'Puente Messaging Microservice';
     return this.hello;
   }
 }

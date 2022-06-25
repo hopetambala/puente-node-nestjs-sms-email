@@ -16,5 +16,5 @@ describe('AppController (e2e)', () => {
   });
 
   it('/ (GET)', () =>
-    request(app.getHttpServer()).get('/').expect(200).expect('Hello World!')); //eslint-disable-line
+    request(app.getHttpServer()).get('/').expect(200).expect('Puente Messaging Microservice')); //eslint-disable-line
 });
