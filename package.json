@@ -1,6 +1,6 @@
 {
   "name": "puente-node-sms-email",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Puente's Email and SMS Microservice",
   "author": "Hope Tambala",
   "private": true,
