@@ -43,6 +43,30 @@ $ npm run test:cov
 ### Modules
 The architectural design of NestJS encourages feature modules. This feature-based design groups the functionality of a single feature in one folder, registered in one module. This design simplifies the codebase and makes code-splitting very easy.
 
+
+#### Email
+POST Call Structure to "http://{{ROOT_UTL}}/email
+```json
+{
+    "emailSubject": "Subject of Email",
+    "emailBody": "Body Of Email",
+    "emailsToSendTo":[
+        "email.org",
+        "email.com",
+        "email.net"
+    ]
+}
+```
+
+### Text
+POST Call Structure to "http://{{ROOT_UTL}}/email
+```json
+{
+    "textTo": "1234567",
+    "textBody": "Text"
+}
+```
+
 ### Services
 Services are classes that handle business logic.
 - [Mailchimp](https://mailchimp.com/developer/transactional/)
