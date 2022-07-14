@@ -48,12 +48,11 @@ The architectural design of NestJS encourages feature modules. This feature-base
 POST Call Structure to "http://{{ROOT_UTL}}/email
 ```json
 {
-    "emailSubject": "Subject of Email",
-    "emailBody": "Body Of Email",
+    "emailSubject": "Email Subject",
+    "objectId":"User's Parse ObjectId",
+    "userFullName":"User's Fullname",
     "emailsToSendTo":[
-        "email.org",
-        "email.com",
-        "email.net"
+        "usersemail@email.com"
     ]
 }
 ```
