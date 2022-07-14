@@ -14,7 +14,7 @@ export default class EmailService {
     /**
      * This is too tightly coupled, but let's just get this show on the road
      */
-    const { emailsToSendTo, objectId:userId, userFullName } = data;
+    const { emailSubject: subject, emailsToSendTo, objectId:userId, userFullName } = data;
     const to = emailsToSendTo.map((email: any) => ({
       email,
       type: 'to',
@@ -23,6 +23,7 @@ export default class EmailService {
     const message = {
       from_email: 'tech@puente-dr.org',
       to,
+      subject,
       global_merge_vars: [
         {
           "name": "objectId",
