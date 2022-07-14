@@ -11,7 +11,10 @@ export default class EmailService {
   }
 
   create(data: RestCall) {
-    const { emailSubject: subject, emailBody: text, emailsToSendTo } = data;
+    /**
+     * This is too tightly coupled, but let's just get this show on the road
+     */
+    const { emailsToSendTo, objectId:userId, userFullName } = data;
     const to = emailsToSendTo.map((email: any) => ({
       email,
       type: 'to',
@@ -19,12 +22,25 @@ export default class EmailService {
 
     const message = {
       from_email: 'tech@puente-dr.org',
-      subject,
-      text,
       to,
+      global_merge_vars: [
+        {
+          "name": "objectId",
+          "content": userId
+        },
+        {
+          "name": "full_name",
+          "content": userFullName
+        }
+      ]
     };
 
-    return this.mailchimp.messages.send({ message });
+    return this.mailchimp.messages.sendTemplate({
+      template_name: "acela-signup-verification",
+      template_content: [{}],
+      message
+    });
+  
   }
 
   static findAll = () => 'This action returns all email';
