@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { MAILCHIMP } from 'vendors/mailchimp';
 import { RestCall } from '../dto/rest-call';
+import { EmailFactory } from './rules/factory';
 
 @Injectable()
 export default class EmailService {
@@ -11,37 +12,8 @@ export default class EmailService {
   }
 
   create(data: RestCall) {
-    /**
-     * This is too tightly coupled, but let's just get this show on the road
-     */
-    const { emailSubject: subject, emailsToSendTo, objectId:userId, userFullName } = data;
-    const to = emailsToSendTo.map((email: any) => ({
-      email,
-      type: 'to',
-    }));
-
-    const message = {
-      from_email: 'tech@puente-dr.org',
-      to,
-      subject,
-      global_merge_vars: [
-        {
-          "name": "objectId",
-          "content": userId
-        },
-        {
-          "name": "full_name",
-          "content": userFullName
-        }
-      ]
-    };
-
-    return this.mailchimp.messages.sendTemplate({
-      template_name: "acela-signup-verification",
-      template_content: [{}],
-      message
-    });
-  
+    const { type } = data;
+    return EmailFactory.getEmailType(type).sendEmail(this.mailchimp, data);
   }
 
   static findAll = () => 'This action returns all email';

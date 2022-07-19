@@ -1,3 +1,4 @@
+/* eslint-disable */
 import * as request from 'supertest';
 import { Test, TestingModule } from '@nestjs/testing';
 import { INestApplication } from '@nestjs/common';
@@ -16,5 +17,8 @@ describe('AppController (e2e)', () => {
   });
 
   it('/ (GET)', () =>
-    request(app.getHttpServer()).get('/').expect(200).expect('Puente Messaging Microservice')); //eslint-disable-line
+    request(app.getHttpServer())
+    .get('/')
+    .expect(200)
+    .expect('Puente Messaging Microservice'));
 });
