@@ -53,7 +53,8 @@ POST Call Structure to "http://{{ROOT_UTL}}/email
     "userFullName":"User's Fullname",
     "emailsToSendTo":[
         "usersemail@email.com"
-    ]
+    ],
+    "type":"passwordReset"
 }
 ```
 
